@@ -173,6 +173,10 @@ function getWriteArgs(src, dst, data, options) {
 		args.push("-id3v2_version", "3");
 	}
 
+	if (options["disposition"]) {
+		args.push('-disposition:v:0', 'attached_pic')
+	}
+
 	// append metadata
 	Object.keys(data).forEach(function(name) {
 		args.push("-metadata");
